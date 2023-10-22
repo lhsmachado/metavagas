@@ -5,7 +5,7 @@ import { CitySearchRepository } from "../../citySearch/repositories/CitySearchRe
 import { TechSearchRepository } from "../../techSearch/repositories/techSearchRepository";
 import { TechnologyService } from "../../technology/service/TechnologyService";
 import { JobsRepository } from "../repositories/JobsRepository";
-import { DataPersistType, DataType, OptionsType, QueryType } from "../utils/JobsTypes";
+import { DataPersistType, OptionsType, QueryType } from "../utils/JobsTypes";
 
 
 
@@ -68,6 +68,7 @@ class JobsService {
         if (data.link != undefined) query.link = data.link;
         if (data.companySize != undefined) query.companySize = data.companySize;
         if (data.jobType != undefined) query.jobType = data.jobType;
+        if(data.localType != undefined) query.localType = data.localType 
         if (data.minSalary != undefined) query.salary = {$gte: data.minSalary};
         if (data.maxSalary != undefined) query.salary = {...query.salary, $lte: data.maxSalary};
         if (data.experience != undefined) query.experience = data.experience
